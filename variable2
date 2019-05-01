@@ -2,10 +2,6 @@
 #include <cs50.h>
 #include <math.h>
 
-#include <stdio.h>
-#include <cs50.h>
-#include <math.h>
-
 int main(void){
   int a=0;
   int b=0;
@@ -30,9 +26,14 @@ int main(void){
     c=get_int("what is C?:\n");
     a=get_int("what is A?:\n");
     printf ("B is:%d\n",c/a);
+     
+   if(*unknown=='b'){
+    c=get_int("what is C?:\n");
+    a=get_int("what is A?:\n");
+    printf ("B is:%d\n",c/a);
     
   }
 }
   }
 }
-
+}
