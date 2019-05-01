@@ -1,40 +1,30 @@
-#include<stdio.h>
-#include<math.h>
- 
-int main(){
-  float a,b,c;
-  float d,root1,root2;  
- 
- 
-  printf("Enter a, b and c of quadratic equation: ");
-  scanf("%f%f%f",&a,&b,&c);
-   
-  d = b * b - 4 * a * c;
+#include <stdio.h>
+#include <cs50.h>
+#include <math.h>
+
+int main(void){
+  int a=0;
+  int b=0;
+  int c=0;
+  char unknown [8];
   
-  if(d < 0){
-    printf("Roots are complex number.\n");
- 
-    printf("Roots of quadratic equation are: ");
-    printf("%.3f%+.3fi",-b/(2*a),sqrt(-d)/(2*a));
-    printf(", %.3f%+.3fi",-b/(2*a),-sqrt(-d)/(2*a));
-  
-    return 0; 
+
+  printf("what is the missing variable that needs to be solved?\n");
+  scanf("%c", unknown);
+
+  if(*unknown=='c'){
+    a=get_int("what is A?:\n");
+    b=get_int("what is B?:\n");
+    printf ("C is:%d \n", a*b);
   }
-  else if(d==0){
-   printf("Both roots are equal.\n");
- 
-   root1 = -b /(2* a);
-   printf("Root of quadratic equation is: %.3f ",root1);
- 
-   return 0;
+  if(*unknown=='a'){
+    c=get_int("what is C?:\n");
+    b=get_int("what is B?:\n");
+    printf ("A is:%d\n",c/b);
   }
-  else{
-   printf("Roots are real numbers.\n");
-  
-   root1 = ( -b + sqrt(d)) / (2* a);
-   root2 = ( -b - sqrt(d)) / (2* a);
-   printf("Roots of quadratic equation are: %.3f , %.3f",root1,root2);
+  if(*unknown=='b'){
+    c=get_int("what is C?:\n");
+    a=get_int("what is A?:\n");
+    printf ("B is:%d\n",c/a);
   }
- 
-  return 0;
 }
